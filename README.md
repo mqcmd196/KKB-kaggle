@@ -44,7 +44,15 @@ git push (remote名) fix_pool
 
 マージに関してはコンフリクト等の問題があるので柔軟にやる．
 
-## ローカル環境(WIPです．無視してください)
+## Google Colab環境構築  
+
+1. [このブログ](https://qiita.com/tamitarai/items/1c9da94fdfad997c3336)を参考に，各自のdriveにリポジトリをcloneする．ここでcloneする先は`"gdrive/My Drive/KKB-kaggle/"`とすること！！！`"gdrive/My Drive/"`と入力してしまうとあなたのGoogle Driveのファイル全てがgit追跡の対象になります．
+
+1. `/KKB-kaggle/terminal.ipynb`というnotebookを作成し，そこでターミナル操作を行うようにする (ローカルでjupyter notebookを用いて`terminal.ipynb`というnotebookを作成し，`/KKB-kaggle/`にアップロードするのがいいかも？)．`terminal.ipynb`はgitに追跡されないように`.gitignore`に登録されています．
+
+1. 各コンペディレクトリのREADMEを参照し，指定の操作を行う．
+
+## ローカル環境構築(WIPです．無視してください)
 
 **ローカル環境の構築は現在推奨していません．WIPです． 以下の方法ではなく， Colabで直接編集する方法を採用してください．**
 
@@ -130,12 +138,4 @@ pip3 install -r requirements.txt
 ```
 
 を入力すると，必要なモジュールが全て入ります．
-
-## Google Colab環境
-
-Notebookの実行環境をGPUにすること．  
-
-[このブログ](https://qiita.com/tamitarai/items/1c9da94fdfad997c3336)を参考に，各自のdriveにリポジトリをclone．この時`/KKB-kaggle/terminal.ipynb`というnotebookを作成しそこでターミナル操作を行う．`terminal.ipynb`はgitに追跡されないように`.gitignore`に登録されています．
-
-その後の手順は各コンペディレクトリのREADMEを参照してください．
 
