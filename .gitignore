@@ -130,6 +130,7 @@ dmypy.json
 
 # jupyter
 .ipynb_checkpoints
+terminal.ipynb
 
 # for MacOS
 .DS_Store

@@ -44,9 +44,9 @@ git push (remote名) fix_pool
 
 マージに関してはコンフリクト等の問題があるので柔軟にやる．
 
-## 環境
+## ローカル環境(WIPです．無視してください)
 
-**ローカル環境の構築は現在推奨していません．WIPです．**
+**ローカル環境の構築は現在推奨していません．WIPです． 以下の方法ではなく， Colabで直接編集する方法を採用してください．**
 
 基本的にGoogle Colabのバージョンと完全一致させます．自分の環境ではうまくいったけどXXさんの環境ではうまくいかなかったということがないように，統一をよろしくお願いします．特に深層学習のフレームワークではそういうことが起こりがちです．
 
@@ -131,6 +131,11 @@ pip3 install -r requirements.txt
 
 を入力すると，必要なモジュールが全て入ります．
 
-## Google Colabの使い方
+## Google Colab環境
 
-Notebookの実行環境をGPUにすることを忘れずに．
+Notebookの実行環境をGPUにすること．  
+
+[このブログ](https://qiita.com/tamitarai/items/1c9da94fdfad997c3336)を参考に，各自のdriveにリポジトリをclone．この時`/KKB-kaggle/terminal.ipynb`というnotebookを作成しそこでターミナル操作を行う．`terminal.ipynb`はgitに追跡されないように`.gitignore`に登録されています．
+
+その後の手順は各コンペディレクトリのREADMEを参照してください．
+
