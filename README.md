@@ -8,7 +8,9 @@
 
 ### branch
 
-`origin master`は本提出用のbranch，`origin develop`は開発branchです．`origin develop`に基本的にみんなのコードをmergeしていく形にして，みんなで話し合って最終提出するコードをmasterにmergeしていく形にします．なので基本的に`origin develop`からbranchを切ってください．あと`origin develop`含め，みんなが使いそうなbranchは**原則動くコード**がある状態にしてください．
+`origin master`は本提出用のbranch，`origin develop`は開発branchです．`origin develop`に基本的にみんなのコードをmergeしていく形にして，みんなで話し合って最終提出するコードをmasterにmergeしていく形にします．なので基本的に`origin develop`からbranchを切ってください．あと`origin develop`含め，みんなが使いそうなbranchは**原則動くコード**がある状態にしてください．  
+
+特に`git push origin master`や`git push origin develop`は**絶対に**やらないようにお願いします．
 
 ### 作業例
 
