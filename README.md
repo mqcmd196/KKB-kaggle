@@ -140,7 +140,7 @@ source ~/pyenv.bash
 
 ```bash
 pyenv virtualenv 3.6.9 KKB-kaggle
-activate KKB-kaggle
+pyenv activate KKB-kaggle
 ```
 
 を実行しましょう．そうすることでKKB-kaggle用の環境に入ります．ここで
