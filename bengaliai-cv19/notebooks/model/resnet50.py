@@ -31,6 +31,7 @@ class model(nn.Module):
     
     def forward(self, x):
         x = self.resnet50(x)
+        x = x.view(x.size(0), -1)
         x = self.fc(x)
         head_root = self.head_root(x)
         head_vowel = self.head_vowel(x)
