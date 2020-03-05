@@ -24,7 +24,7 @@ class model(nn.Module):
         super(model, self).__init__()
 
         self.resnet152 = models.resnet152(pretrained = True)
-        self.fc = nn.Linear(1024,512)
+        self.fc = nn.Linear(1000,512)
         self.head_root = nn.Linear(512, 168) # + softmax
         self.head_vowel = nn.Linear(512, 11) # + softmax
         self.head_consonant = nn.Linear(512, 7) # + softmax
