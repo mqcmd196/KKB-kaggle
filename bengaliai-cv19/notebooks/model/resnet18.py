@@ -1,7 +1,6 @@
 #importするmoduleの一覧
 import numpy as np
 import pandas as pd
-import cupy as cp
 import matplotlib.pyplot as plt
 from sklearn.metrics import recall_score
 import cv2
@@ -25,13 +24,14 @@ class model(nn.Module):
         super(model, self).__init__()
 
         self.resnet18 = models.resnet18(pretrained = True)
+        self.fc = nn.Linear(1024,512)
         self.head_root = nn.Linear(512, 168) # + softmax
         self.head_vowel = nn.Linear(512, 11) # + softmax
         self.head_consonant = nn.Linear(512, 7) # + softmax
     
     def forward(self, x):
         x = self.resnet18(x)
-        x = x.view(x.size(0), -1)
+        x = self.fc(x)
         head_root = self.head_root(x)
         head_vowel = self.head_vowel(x)
         head_consonant = self.head_consonant(x)

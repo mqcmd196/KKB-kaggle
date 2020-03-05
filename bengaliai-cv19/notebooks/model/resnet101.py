@@ -12,11 +12,9 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, ConcatDataset
 from torchvision import datasets, transforms, utils
 import torchvision.models as models
-from efficientnet_pytorch import EfficientNet
 from torch.autograd import Variable
 import torch.optim as optim
 import torchvision
-
 import PIL
 # from torchsummary import summary
 import gc
@@ -25,15 +23,14 @@ class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
 
-        self.efficient_imagenet = EfficientNet.from_pretrained('efficientnet-b0')
-        self.fc = nn.Linear(1000, 512)
+        self.resnet101 = models.resnet101(pretrained = True)
+        self.fc = nn.Linear(1024,512)
         self.head_root = nn.Linear(512, 168) # + softmax
         self.head_vowel = nn.Linear(512, 11) # + softmax
         self.head_consonant = nn.Linear(512, 7) # + softmax
     
     def forward(self, x):
-        x = self.efficient_imagenet(x)
-        x = x.view(x.size(0), -1)
+        x = self.resnet101(x)
         x = self.fc(x)
         head_root = self.head_root(x)
         head_vowel = self.head_vowel(x)

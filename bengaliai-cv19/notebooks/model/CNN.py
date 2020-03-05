@@ -1,7 +1,6 @@
 #importするmoduleの一覧
 import numpy as np
 import pandas as pd
-import cupy as cp
 import matplotlib.pyplot as plt
 from sklearn.metrics import recall_score
 import cv2
