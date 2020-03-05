@@ -137,3 +137,6 @@ terminal.ipynb
 
 # ignore dataset
 dataset/
+
+# for VSCode
+.vscode/
