@@ -1,7 +1,6 @@
 #importするmoduleの一覧
 import numpy as np
 import pandas as pd
-import cupy as cp
 import matplotlib.pyplot as plt
 from sklearn.metrics import recall_score
 import cv2
@@ -23,7 +22,8 @@ import gc
 class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
-        
+
+        self.name = 'cnn'
         self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
         self.conv2 = nn.Conv2d(32, 32, 3, padding=1)
         self.conv3 = nn.Conv2d(32, 32, 3, padding=1)
