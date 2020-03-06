@@ -35,4 +35,5 @@ class model(nn.Module):
         head_root = self.head_root(x)
         head_vowel = self.head_vowel(x)
         head_consonant = self.head_consonant(x)
+        return head_root, head_vowel, head_consonant # not sure..
     
