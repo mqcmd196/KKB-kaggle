@@ -23,6 +23,7 @@ class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
 
+        self.name = 'resnet34'
         self.resnet34 = models.resnet34(pretrained = True)
         self.fc = nn.Linear(1000,512)
         self.head_root = nn.Linear(512, 168) # + softmax
