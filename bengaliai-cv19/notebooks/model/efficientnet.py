@@ -1,7 +1,7 @@
 #importするmoduleの一覧
 import numpy as np
 import pandas as pd
-import cupy as cp
+#import cupy as cp
 import matplotlib.pyplot as plt
 from sklearn.metrics import recall_score
 import cv2
@@ -25,6 +25,8 @@ import gc
 class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
+
+        self.name = "efficientnet"
 
         self.efficient_imagenet = EfficientNet.from_pretrained('efficientnet-b0')
         self.fc = nn.Linear(1000, 512)
