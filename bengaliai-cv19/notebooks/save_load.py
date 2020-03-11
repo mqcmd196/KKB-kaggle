@@ -30,6 +30,12 @@ def load_model(model,optimizer,model_path):
     print("loaded from {}".format(model_path))
     return model, optimizer, epoch
 
+def load_weight(model,model_path):
+    device = torch.device('cpu')
+    model.load_state_dict(torch.load(model_path, map_location=device))
+    print("loaded from {}".format(model_path))
+    return model
+
 def save_model(model,optimizer,model_dir, epoch):
     print("---saving model of epoch {}---".format(epoch))
     now = datetime.datetime.now()
