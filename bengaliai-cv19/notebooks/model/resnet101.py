@@ -23,17 +23,17 @@ class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
 
-        self.name = 'resnet18'
-        self.resnet18 = models.resnet18(pretrained = True)
-        self.fc = nn.Linear(1000,512) # +relu
+        self.name = 'resnet101'
+        self.resnet101 = models.resnet101(pretrained = True)
+        self.fc = nn.Linear(1000,512)
         self.head_root = nn.Linear(512, 168) # + softmax
         self.head_vowel = nn.Linear(512, 11) # + softmax
         self.head_consonant = nn.Linear(512, 7) # + softmax
     
     def forward(self, x):
-        x = self.resnet18(x)
+        x = self.resnet101(x)
         x = x.view(x.size(0), -1)
-        x = F.relu(self.fc(x))
+        x = self.fc(x)
         head_root = self.head_root(x)
         head_vowel = self.head_vowel(x)
         head_consonant = self.head_consonant(x)

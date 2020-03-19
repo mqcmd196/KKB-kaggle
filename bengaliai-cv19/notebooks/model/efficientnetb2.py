@@ -26,9 +26,9 @@ class model(nn.Module):
     def __init__(self):
         super(model, self).__init__()
 
-        self.name = "efficientnet"
+        self.name = "efficientnetb2"
 
-        self.efficient_imagenet = EfficientNet.from_pretrained('efficientnet-b0')
+        self.efficient_imagenet = EfficientNet.from_pretrained('efficientnet-b2')
         self.fc = nn.Linear(1000, 512)
         self.head_root = nn.Linear(512, 168) # + softmax
         self.head_vowel = nn.Linear(512, 11) # + softmax
