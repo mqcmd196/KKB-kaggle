@@ -137,3 +137,9 @@ terminal.ipynb
 
 # ignore dataset
 dataset/
+
+# for VSCode
+.vscode/
+
+# for trained model
+bengaliai-cv19/trained_models/
